@@ -8,12 +8,14 @@ import BarChartIcon from "@mui/icons-material/BarChart";
 import TableViewIcon from "@mui/icons-material/TableView";
 import LogoDevIcon from "@mui/icons-material/LogoDev";
 import { Link } from "react-router-dom";
-import { Button } from "@mui/material";
-import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
+import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
+import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
+import { useState } from "react";
 
 const Sidebar = () => {
+  const [show, setShow] = useState(true);
   return (
-    <div className="sidebar">
+    <div style={{ width: show ? '200px' : '100px'}} className="sidebar">
       <div className="top">
         <Link to="/" style={{ textDecoration: "none" }}>
           <span className="logo">
@@ -22,43 +24,52 @@ const Sidebar = () => {
         </Link>
       </div>
       <hr />
-      <div className="center">
+      <div className={show ? 'center' : 'center-after'}>
         <ul>
-          
-        <li>
-          <DashboardIcon className="icon"/>
-          <span>Dashboard</span>
-        </li>
-        <hr />
-        <p className="title">INTERFACE</p>
-        <li>
-          <SettingsIcon className="icon"/>
-          <span>Components</span>
-        </li><li>
-          <BuildIcon className="icon"/>
-          <span>Utilities</span>
-        </li>
-        <hr />
-        <p className="title">ADDONS</p>
-        <li>
-          <FolderIcon className="icon"/>
-          <span>Pages</span>
-        </li><li>
-          <BarChartIcon className="icon"/>
-          <span>Charts</span>
-        </li><li>
-          <TableViewIcon className="icon"/>
-          <span>Tables</span>
-        </li>
+          <li className={show ? 'list-toggle-before' : 'list-toggle-after'}>
+            <DashboardIcon className="icon" />
+            <span className={show ? 'span-before' : 'span-after'}>Dashboard</span>
+          </li>
+          <hr />
+          <p className="title">INTERFACE</p>
+          <li className={show ? 'list-toggle-before' : 'list-toggle-after'}>
+            <SettingsIcon className="icon" />
+            <span className={show ? 'span-before' : 'span-after'}>Components</span>
+          </li>
+          <li className={show? 'list-toggle-before' : 'list-toggle-after'}>
+            <BuildIcon className="icon" />
+            <span className={show ? 'span-before' : 'span-after'}>Utilities</span>
+          </li>
+          <hr />
+          <p className="title">ADDONS</p>
+          <li className={show? 'list-toggle-before' : 'list-toggle-after'}>
+            <FolderIcon className="icon" />
+            <span className={show ? 'span-before' : 'span-after'}>Pages</span>
+          </li>
+          <li className={show? 'list-toggle-before' : 'list-toggle-after'}>
+            <BarChartIcon className="icon" />
+            <span className={show ? 'span-before' : 'span-after'}>Charts</span>
+          </li>
+          <li className={show? 'list-toggle-before' : 'list-toggle-after'}>
+            <TableViewIcon className="icon" />
+            <span className={show ? 'span-before' : 'span-after'}>Tables</span>
+          </li>
         </ul>
       </div>
       <hr />
 
       <div className="bottom">
-        <button className="sidebar-toggle">
-          <KeyboardArrowLeftIcon className="icon" id="arrow"/>
+        <button
+          className="sidebar-toggle"
+          aria-label="switch"
+          onClick={() => setShow(!show)}
+        >
+          {show ? (
+            <KeyboardArrowLeftIcon className="icon" id="arrow" />
+          ) : (
+            <KeyboardArrowRightIcon className="icon" id="arrow" />
+          )}
         </button>
-        
       </div>
     </div>
   );
