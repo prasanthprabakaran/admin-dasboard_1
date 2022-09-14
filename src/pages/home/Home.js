@@ -67,14 +67,11 @@ const Home = () => {
             {Widgets.map((list) => {
               return <Widget key={list.id} list={list} />;
             })}
-            {/* <Widget type="monthly" />
-                <Widget type="annual" />
-                <Widget type="tasks" />
-                <Widget type="requests" /> */}
           </div>
           <div className="charts">
-            <Chart />
-            <Chart />
+            <Chart title="Earnings Overview" aspect={2/1} />
+            {/* <Chart title="12 Months" aspect={2/1} /> */}
+            
           </div>
         </div>
       </div>
