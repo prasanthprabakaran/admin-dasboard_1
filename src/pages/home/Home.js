@@ -9,6 +9,7 @@ import CalendarTodayIcon from "@mui/icons-material/CalendarToday";
 import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
 import ListAltIcon from "@mui/icons-material/ListAlt";
 import QuestionAnswerIcon from "@mui/icons-material/QuestionAnswer";
+import Chart2 from "../../components/chart/Chart2";
 
 const Widgets = [
   {
@@ -70,8 +71,7 @@ const Home = () => {
           </div>
           <div className="charts">
             <Chart title="Earnings Overview" aspect={2/1} />
-            {/* <Chart title="12 Months" aspect={2/1} /> */}
-            
+            <Chart2 />
           </div>
         </div>
       </div>
