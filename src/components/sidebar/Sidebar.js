@@ -31,7 +31,7 @@ const Sidebar = () => {
             <span className={show ? 'span-before' : 'span-after'}>Dashboard</span>
           </li>
           <hr />
-          <p className="title">INTERFACE</p>
+          <p className="sidebar-title">INTERFACE</p>
           <li className={show ? 'list-toggle-before' : 'list-toggle-after'}>
             <SettingsIcon className="icon" />
             <span className={show ? 'span-before' : 'span-after'}>Components</span>
@@ -41,7 +41,7 @@ const Sidebar = () => {
             <span className={show ? 'span-before' : 'span-after'}>Utilities</span>
           </li>
           <hr />
-          <p className="title">ADDONS</p>
+          <p className="sidebar-title">ADDONS</p>
           <li className={show? 'list-toggle-before' : 'list-toggle-after'}>
             <FolderIcon className="icon" />
             <span className={show ? 'span-before' : 'span-after'}>Pages</span>
